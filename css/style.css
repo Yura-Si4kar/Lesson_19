@@ -1,0 +1,46 @@
+*{
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.body {
+    background-color: lightblue;
+}
+
+.container {
+    max-width: 1300px;
+    padding: 20px 0 0;
+}
+
+.head {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 20px 10px;
+    border-bottom: 2px solid grey;
+}
+
+.head_title {
+    color: red;
+}
+
+.add_btn {
+    background-color: yellow;
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.stickers__block {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.stickers_input {
+    text-align: end;
+}
+
+.stickers__close {
+    cursor: pointer;
+}
