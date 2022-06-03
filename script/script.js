@@ -52,19 +52,17 @@ $(() => {
     }
 
     function saveNewStikersText(e) {
-        const element = e.target;
+        const $element = $(e.target);
 
-        updateStickers(
-            element.parentElement.dataset.id,
-            element.name,
-            element.value,
-        );
+        updateStickers($element.parent().data('id'), { description: $element.val() });
     }
 
-    function updateStickers(id, name, value) {
+    function updateStickers(id, changes) {
         const stickers = stickersList.find((el) => el.id == id);
 
-        stickers[name] = value;
+        note = { ...stickers, ...changes };
+
+        stickersList = stickersList.map((el) => (el.id == id ? stickers : el));
 
         fetch(STIKERS_URL + id, {
             method: 'PUT',
